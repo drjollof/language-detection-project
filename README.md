@@ -37,34 +37,42 @@ This project focus on building a machine learning model that can detect the lang
 ##  Performances
 
  #### Multinomial Logistic Regression:
- - Accuracy: 94.66%
+ - Accuracy: 93.77%
 
- - Precision: 95.97%
+ - Precision: 95.65%
 
- - F1 Score: 94.90%
-
-
- #### Multinomial Naive Bayes:
- - Accuracy: 95.54%
-
- - Precision: 96.43%
-
- - F1 Score: 95.54% 
-
-
- #### Random Forest:
- - Accuracy: 94.09%
-
- - Precision: 96.63%
+ - Recall: 93.77%
 
  - F1 Score: 94.09%
 
+
+ #### Multinomial Naive Bayes:
+ - Accuracy: 95.65%
+
+ - Precision: 96.48%
+
+ - Recall: 95.65%
+
+ - F1 Score: 95.62% 
+
+
+ #### Random Forest Classifier:
+ - Accuracy: 90.71%
+
+ - Precision: 96.33%
+
+ - Recall: 90.71%
+
+ - F1 Score: 90.63%
+
  #### Support Vector Classifier:
- - Accuracy: 89.40%
+ - Accuracy: 87.86%
 
- - Precision: 91.96%
+ - Precision: 91.01%
 
- - F1 Score: 90.03%
+ - Recall: 87.86%
+
+ - F1 Score: 88.67%
 
 ### Best Model:
  Multinomial Naive Bayes  
