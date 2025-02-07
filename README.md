@@ -15,8 +15,12 @@ This project focus on building a machine learning model that can detect the lang
  - Source: Kaggle
 ## Tools
 - Pandas
+- numpy
 - Scikit-learn
+- Matplotlib
+- Seaborn
 - Tqdm
+
 
 ## Project Workflow
 
@@ -32,47 +36,47 @@ This project focus on building a machine learning model that can detect the lang
    - Support Vector Classifier (SVC)
    - Multinomial Logistic Regression
  #### 4. Model Evaluation:
- - Evaluate performance using accuracy, precision, recall, and F1-score.
+ - Evaluated performance using accuracy, precision, recall, confusion_matrix and F1-score.
 
-##  Performances
+##  Base Performances
 
  #### Multinomial Logistic Regression:
- - Accuracy: 93.77%
+ - Accuracy: 0.9467
 
- - Precision: 95.65%
+ - Precision: 0.9598
 
- - Recall: 93.77%
+ - Recall: 0.9467
 
- - F1 Score: 94.09%
+ - F1 Score: 0.9490
 
 
  #### Multinomial Naive Bayes:
- - Accuracy: 95.65%
+ - Accuracy: 0.9438
 
- - Precision: 96.48%
+ - Precision: 0.9597
 
- - Recall: 95.65%
+ - Recall: 0.9438
 
- - F1 Score: 95.62% 
+ - F1 Score: 0.9430
 
 
  #### Random Forest Classifier:
- - Accuracy: 90.71%
+ - Accuracy: 0.9195
 
- - Precision: 96.33%
+ - Precision: 0.9519
 
- - Recall: 90.71%
+ - Recall: 0.9195
 
- - F1 Score: 90.63%
+ - F1 Score: 0.9179
 
  #### Support Vector Classifier:
- - Accuracy: 87.86%
+ - Accuracy: 0.8802
 
- - Precision: 91.01%
+ - Precision: 0.9157
 
- - Recall: 87.86%
+ - Recall: 0.8802
 
- - F1 Score: 88.67%
+ - F1 Score: 0.8841
 
 ### Best Model:
- Multinomial Naive Bayes  
+ Multinomial Naive Bayes  (0.9791)
