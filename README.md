@@ -80,3 +80,23 @@ This project focus on building a machine learning model that can detect the lang
 
 ### Best Model:
  Multinomial Naive Bayes  (0.9791)
+
+---
+
+###  Installation
+
+To set up this project locally, follow these steps:
+
+####  **Clone the Repository**
+```sh
+git clone https://github.com/drjollof/language-detection-project.git
+
+#### **Navigate to project directory
+cd language-detection-project
+
+#### **Install Dependencies
+pip install -r requirements.txt
+
+#### **Run App
+streamlit run app.py
+

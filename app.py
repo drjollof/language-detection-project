@@ -29,7 +29,7 @@ def load_resources():
     try:
         MNB_model = joblib.load(model_path)
         vectorizer = joblib.load(vectorizer_path)
-        st.success("Model and vectorizer loaded successfully!")
+        #st.success("Model and vectorizer loaded successfully!")
     except Exception as e:
         st.error(f"Error loading model/vectorizer: {e}")
         return None, None
