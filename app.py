@@ -14,8 +14,8 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 @st.cache_resource
 def load_resources():
 
-    model_path = os.path.abspath("model/MNB_model.pkl")
-    vectorizer_path = os.path.abspath("model/vectorizer.pkl")
+    model_path = os.path.abspath("model/MNB_model_v2.pkl")
+    vectorizer_path = os.path.abspath("model/vectorizer_v2.pkl")
 
     st.write(f"🔍 Checking files:")
     st.write(f"📂 Model path: {model_path} → Exists: {os.path.exists(model_path)}")
