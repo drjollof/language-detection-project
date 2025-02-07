@@ -13,26 +13,32 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 #function to load pickle files
 @st.cache_resource
 def load_resources():
- 
- model_path = os.path.join(os.path.dirname(__file__), "model", "MNB_model_v2.pkl")
- vectorizer_path = os.path.join(os.path.dirname(__file__), "model", "vectorizer_v2.pkl")
 
- if not os.path.exists(model_path):
-        st.error(f"Model file not found: {model_path}")
-        return None, None
- if not os.path.exists(vectorizer_path):
-        st.error(f"Vectorizer file not found: {vectorizer_path}")
+    model_path = os.path.abspath("model/MNB_model.pkl")
+    vectorizer_path = os.path.abspath("model/vectorizer.pkl")
+
+    st.write(f"🔍 Checking files:")
+    st.write(f"📂 Model path: {model_path} → Exists: {os.path.exists(model_path)}")
+    st.write(f"📂 Vectorizer path: {vectorizer_path} → Exists: {os.path.exists(vectorizer_path)}")
+
+    if not os.path.exists(model_path):
+        st.error("🚨 Model file is missing!")
         return None, None
 
- try:
+    if not os.path.exists(vectorizer_path):
+        st.error("🚨 Vectorizer file is missing!")
+        return None, None
+
+    try:
         MNB_model = joblib.load(model_path)
         vectorizer = joblib.load(vectorizer_path)
- except Exception as e:
-        st.error(f"Failed to load model: {e}")
+        st.success("✅ Model and vectorizer loaded successfully!")
+    except Exception as e:
+        st.error(f"🚨 Error loading model/vectorizer: {e}")
         return None, None
 
- return MNB_model, vectorizer
- 
+    return MNB_model, vectorizer
+
  
 
 #load model and vectorizer 
