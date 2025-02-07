@@ -38,6 +38,8 @@ This project focus on building a machine learning model that can detect the lang
  #### 4. Model Evaluation:
  - Evaluated performance using accuracy, precision, recall, confusion_matrix and F1-score.
 
+---
+
 ##  Base Performances
 
  #### Multinomial Logistic Regression:
@@ -83,7 +85,7 @@ This project focus on building a machine learning model that can detect the lang
 
 ---
 
-###  Installation
+####  Installation
 
 To set up this project locally, follow these steps:
 
@@ -106,3 +108,8 @@ pip install -r requirements.txt
 ```sh
 streamlit run app.py
 ```
+---
+
+## Live App
+
+You can access the deployed version of this app here:  **[Language Detection App](https://trad-lang-detect.streamlit.app/)**  
