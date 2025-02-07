@@ -14,9 +14,8 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 @st.cache_resource
 def load_resources():
  
- model_path = os.path.join(os.getcwd(), "model", "MNB_model.pkl")
- vectorizer_path = os.path.join(os.getcwd(), "model", "vectorizer.pkl")
-
+ model_path = os.path.join(os.path.dirname(__file__), "model", "MNB_model.pkl")
+ vectorizer_path = os.path.join(os.path.dirname(__file__), "model", "vectorizer.pkl")
  if not os.path.exists(model_path):
         st.error(f"Model file not found: {model_path}")
         return None, None
@@ -41,6 +40,14 @@ MNB_model , vectorizer = load_resources()
 
 #function to predict a single text
 def predict_text_MNB(text):
+    if vectorizer is None:
+        st.error("Vectorizer is not loaded!")
+        return ["Unknown"]
+
+    if MNB_model is None:
+        st.error("Model is not loaded!")
+        return ["Unknown"]
+    
     text = vectorizer.transform([text])
     prediction = MNB_model.predict(text)
     return prediction
