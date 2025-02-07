@@ -86,7 +86,7 @@ st.header('LANGUAGE DETECTION')
 st.divider()
 tab1, tab2 = st.tabs(['Single Text ', 'Dataset'])
 with tab1:
- st.subheader('Detect a new text')
+ #st.subheader('Detect a new text')
  text = st.text_input(label= 'ENTER TEXT:')
 
  if text:
@@ -96,7 +96,7 @@ with tab1:
 st.divider()
 
 with tab2:
- st.subheader('Detect a new dataset')
+ #st.subheader('Detect a new dataset')
  st.caption('NOTE: Dataset should have two columns (text and language)')
  file = st.file_uploader('UPLOAD CSV/TXT FILE:')
  if file: 

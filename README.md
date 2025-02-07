@@ -87,16 +87,22 @@ This project focus on building a machine learning model that can detect the lang
 
 To set up this project locally, follow these steps:
 
-####  **Clone the Repository**
+####  1. Clone the Repository:
 ```sh
 git clone https://github.com/drjollof/language-detection-project.git
+```
+#### 2. Navigate to project directory
 
-#### **Navigate to project directory
+```sh
 cd language-detection-project
+```
 
-#### **Install Dependencies
+#### 3. Install Dependencies
+```sh
 pip install -r requirements.txt
+```
 
-#### **Run App
+#### 4. Run App
+```sh
 streamlit run app.py
-
+```
