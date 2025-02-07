@@ -18,13 +18,21 @@ def load_resources():
  vectorizer_path = os.path.join(os.getcwd(), "model", "vectorizer.pkl")
 
  if not os.path.exists(model_path):
-        raise FileNotFoundError(f"Model file not found: {model_path}")
+        st.error(f"Model file not found: {model_path}")
+        return None, None
  if not os.path.exists(vectorizer_path):
-        raise FileNotFoundError(f"Vectorizer file not found: {vectorizer_path}")
- MNB_model = joblib.load(model_path)
- vectorizer = joblib.load(vectorizer_path)
-  
+        st.error(f"Vectorizer file not found: {vectorizer_path}")
+        return None, None
+
+ try:
+        MNB_model = joblib.load(model_path)
+        vectorizer = joblib.load(vectorizer_path)
+ except Exception as e:
+        st.error(f"Failed to load model: {e}")
+        return None, None
+
  return MNB_model, vectorizer
+ 
  
 
 #load model and vectorizer 
@@ -35,7 +43,6 @@ MNB_model , vectorizer = load_resources()
 def predict_text_MNB(text):
     text = vectorizer.transform([text])
     prediction = MNB_model.predict(text)
-    print(prediction) 
     return prediction
 
 def confusion(predicted_y, y):
