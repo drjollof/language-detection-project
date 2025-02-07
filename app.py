@@ -14,12 +14,17 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 @st.cache_resource
 def load_resources():
  
-  model_path = os.path.join("model", "MNB_model.pkl")
-  vectorizer_path = os.path.join("model", "vectorizer.pkl")
-  MNB_model = joblib.load(model_path)
-  vectorizer = joblib.load(vectorizer_path)
+ model_path = os.path.join(os.getcwd(), "model", "MNB_model.pkl")
+ vectorizer_path = os.path.join(os.getcwd(), "model", "vectorizer.pkl")
+
+ if not os.path.exists(model_path):
+        raise FileNotFoundError(f"Model file not found: {model_path}")
+ if not os.path.exists(vectorizer_path):
+        raise FileNotFoundError(f"Vectorizer file not found: {vectorizer_path}")
+ MNB_model = joblib.load(model_path)
+ vectorizer = joblib.load(vectorizer_path)
   
-  return MNB_model, vectorizer
+ return MNB_model, vectorizer
  
 
 #load model and vectorizer 
