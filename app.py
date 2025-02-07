@@ -10,23 +10,22 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import confusion_matrix, accuracy_score
 
-
+#function to load pickle files
 @st.cache_resource
 def load_resources():
  
-  model_path = os.path.join("model", "MNB_model_compressed.pkl.gz")
-  vectorizer_path = os.path.join("model", "vectorizer.pkl.gz")
-  with gzip.open(model_path, "rb") as f:
-    MNB_model = joblib.load(f)
-
-  with gzip.open(vectorizer_path, "rb") as v:
-    vectorizer = joblib.load(v)  
- 
+  model_path = os.path.join("model", "MNB_model.pkl")
+  vectorizer_path = os.path.join("model", "vectorizer.pkl")
+  MNB_model = joblib.load(model_path)
+  vectorizer = joblib.load(vectorizer_path)
+  
   return MNB_model, vectorizer
  
 
 #load model and vectorizer 
 MNB_model , vectorizer = load_resources()
+
+
 #function to predict a single text
 def predict_text_MNB(text):
     text = vectorizer.transform([text])
@@ -80,4 +79,3 @@ with tab2:
  if file: 
   pred = predict_dataset(file)
 
-#st.navigation(pages=['Text Detection','Dataset Detection'], position= 'sidebar', )
